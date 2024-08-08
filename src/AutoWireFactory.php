@@ -7,10 +7,10 @@ namespace BluePsyduck\LaminasAutoWireFactory;
 use BluePsyduck\LaminasAutoWireFactory\Exception\FailedReflectionException;
 use BluePsyduck\LaminasAutoWireFactory\Resolver\ResolverFactory;
 use BluePsyduck\LaminasAutoWireFactory\Resolver\ResolverInterface;
-use Interop\Container\ContainerInterface;
 use Laminas\ServiceManager\Factory\AbstractFactoryInterface;
 use Laminas\ServiceManager\Factory\FactoryInterface;
 use Psr\Container\ContainerExceptionInterface;
+use Psr\Container\ContainerInterface;
 use ReflectionException;
 
 /**
@@ -69,7 +69,7 @@ class AutoWireFactory implements FactoryInterface, AbstractFactoryInterface
      * @return object
      * @throws ContainerExceptionInterface
      */
-    public function __invoke(ContainerInterface $container, $requestedName, array $options = null): object
+    public function __invoke(ContainerInterface $container, string $requestedName, ?array $options = null): object
     {
         if (!class_exists($requestedName)) {
             throw new FailedReflectionException($requestedName);
@@ -91,7 +91,7 @@ class AutoWireFactory implements FactoryInterface, AbstractFactoryInterface
      * @param string $requestedName
      * @return bool
      */
-    public function canCreate(ContainerInterface $container, $requestedName): bool
+    public function canCreate(ContainerInterface $container, string $requestedName): bool
     {
         if (!class_exists($requestedName)) {
             return false;
