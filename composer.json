@@ -1,7 +1,7 @@
 {
-    "name": "bluepsyduck/laminas-autowire-factory",
+    "name": "ricwein/laminas-autowire-factory",
     "description": "A Laminas factory implementation allowing for auto-wiring like in Symfony.",
-    "homepage": "https://github.com/BluePsyduck/laminas-autowire-factory",
+    "homepage": "https://github.com/ricwein/laminas-autowire-factory",
     "type": "library",
     "keywords": ["BluePsyduck", "Laminas", "auto-wire", "factory"],
     "license": "GPL-3.0-or-later",
@@ -9,6 +9,11 @@
         {
             "name": "BluePsyduck",
             "email": "bluepsyduck@gmx.com",
+            "role": "Developer"
+        },
+        {
+            "name": "Richard Weinhold",
+            "email": "richard.weinhold@check4.de",
             "role": "Developer"
         }
     ],
